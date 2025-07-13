@@ -1,6 +1,4 @@
 .vs/
 package-lock.json
 node_modules
-script.js
 tsconfig.json
-assets/fonts
