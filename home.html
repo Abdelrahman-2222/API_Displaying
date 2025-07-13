@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - E-Commerce</title>
+    <!-- Bootstrap CSS first -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS last to override Bootstrap if needed -->
+    <link rel="stylesheet" href="styling/home.css">
+</head>
+
+<body class="bg-light">
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-store me-2"></i>E-Commerce</a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text text-white" id="userWelcome">
+                    <i class="fas fa-user-circle me-1"></i>Welcome!
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid py-4">
+        <!-- Filter Tabs -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-3">
+                        <ul class="nav nav-pills nav-fill" id="filterTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active fw-semibold" id="all-tab" data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab">
+                                    <i class="fas fa-th-large me-2"></i>All
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-semibold" id="dogs-tab" data-bs-toggle="pill" data-bs-target="#dogs" type="button" role="tab">
+                                    <i class="fas fa-dog me-2"></i>Dogs
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-semibold" id="products-tab" data-bs-toggle="pill" data-bs-target="#products" type="button" role="tab">
+                                    <i class="fas fa-box me-2"></i>Products
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-semibold text-danger" id="logout-btn" type="button">
+                                    <i class="fas fa-sign-out-alt me-2"></i>Logout
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="tab-content" id="filterTabsContent">
+            <!-- All Tab -->
+            <div class="tab-pane fade show active" id="all" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 class="mb-3"><i class="fas fa-dog text-info me-2"></i>Dogs (DummyJSON)</h4>
+                        <div id="allDogsContainer" class="products-container"></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="mb-3"><i class="fas fa-box text-primary me-2"></i>Products (FakeAPI)</h4>
+                        <div id="allProductsContainer" class="products-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dogs Tab -->
+            <div class="tab-pane fade" id="dogs" role="tabpanel">
+                <h4 class="mb-3"><i class="fas fa-dog text-info me-2"></i>All Dogs (DummyJSON)</h4>
+                <div id="dogsContainer" class="products-container"></div>
+            </div>
+
+            <!-- Products Tab -->
+            <div class="tab-pane fade" id="products" role="tabpanel">
+                <h4 class="mb-3"><i class="fas fa-box text-primary me-2"></i>All Products (FakeAPI)</h4>
+                <div id="productsContainer" class="products-container"></div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2 text-muted">Loading data...</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS first -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <!-- Custom JavaScript last -->
+    <script src="js/home.js"></script>
+</body>
+
+</html>

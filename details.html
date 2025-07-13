@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - E-Commerce</title>
+    <!-- Bootstrap CSS first -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS last to override Bootstrap if needed -->
+    <link rel="stylesheet" href="styling/details.css">
+</head>
+
+<body class="bg-light">
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="home.html"><i class="fas fa-store me-2"></i>E-Commerce</a>
+            <div class="navbar-nav ms-auto">
+                <button class="btn btn-outline-light btn-sm" onclick="goBack()">
+                    <i class="fas fa-arrow-left me-1"></i>Back to Home
+                </button>
+                <span class="navbar-text text-white ms-3" id="userWelcome">
+                    <i class="fas fa-user-circle me-1"></i>Welcome!
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container py-4">
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2 text-muted">Loading product details...</p>
+        </div>
+
+        <!-- Product Details Container -->
+        <div id="productDetailsContainer" class="d-none">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="product-image-container">
+                            <img id="productImage" src="" alt="" class="product-detail-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <span id="productSource" class="badge fs-6 mb-2"></span>
+                            </div>
+                            <h1 id="productTitle" class="h3 mb-3"></h1>
+                            <div class="mb-3">
+                                <span id="productCategory" class="badge bg-secondary fs-6"></span>
+                                <span id="productBrand" class="badge bg-info fs-6 ms-1 d-none"></span>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <span id="productPrice" class="h2 text-primary me-3"></span>
+                                    <div id="productRating" class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <span id="ratingValue"></span>
+                                        <span id="ratingCount" class="text-muted ms-1"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h5 class="mb-2">Description</h5>
+                                <p id="productDescription" class="text-muted"></p>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary btn-lg">
+                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                                </button>
+                                <button class="btn btn-outline-secondary" onclick="goBack()">
+                                    <i class="fas fa-arrow-left me-2"></i>Back to Products
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Container -->
+        <div id="errorContainer" class="d-none">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center py-5">
+                    <i class="fas fa-exclamation-triangle text-warning fs-1 mb-3"></i>
+                    <h3 class="mb-3">Product Not Found</h3>
+                    <p class="text-muted mb-4">The product you're looking for could not be found or may have been removed.</p>
+                    <button class="btn btn-primary" onclick="goBack()">
+                        <i class="fas fa-arrow-left me-2"></i>Return to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS first -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <!-- Custom JavaScript last -->
+    <script src="js/details.js"></script>
+</body>
+
+</html>
